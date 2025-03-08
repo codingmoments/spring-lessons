@@ -9,9 +9,9 @@ spring:
 #    open-in-view: false
   datasource:
     type: oracle.ucp.jdbc.PoolDataSource
-    url: "jdbc:oracle:thin:@//oracle-dev-gcp.internal.maxxton/snp3"
-    username: nwseur_live
-    password: Mxt2_2EurKcopEi
+    url: "jdbc:oracle:thin:@//my-database/service"
+    username: my-username
+    password: my-password
     driverClassName: oracle.jdbc.driver.OracleDriver
     ucp:
       min-pool-size: 2
