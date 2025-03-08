@@ -1,6 +1,7 @@
 package com.ucp.example.controller;
 
 import java.time.Instant;
+import java.util.concurrent.ThreadLocalRandom;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,7 +27,7 @@ public class EmployeeController {
     LOGGER.info("creating employees in bulk ...");
 
     Employee employee = new Employee();
-    employee.setEmployeeId(Instant.now().getEpochSecond());
+    employee.setEmployeeId(ThreadLocalRandom.current().nextLong());
     employee.setName("Johny");
 
     LOGGER.info("saving first employee ...");
@@ -41,7 +42,7 @@ public class EmployeeController {
     }
 
     employee = new Employee();
-    employee.setEmployeeId(Instant.now().getEpochSecond());
+    employee.setEmployeeId(ThreadLocalRandom.current().nextLong());
     employee.setName("Jimmy");
 
     LOGGER.info("saving second employee ...");
