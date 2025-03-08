@@ -1,0 +1,32 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: closed-connection
+  jpa:
+    show-sql: true
+#    open-in-view: false
+  datasource:
+    type: oracle.ucp.jdbc.PoolDataSource
+    url: "jdbc:oracle:thin:@//oracle-dev-gcp.internal.maxxton/snp3"
+    username: nwseur_live
+    password: Mxt2_2EurKcopEi
+    driverClassName: oracle.jdbc.driver.OracleDriver
+    ucp:
+      min-pool-size: 2
+      max-pool-size: 4
+      abandoned-connection-timeout: 20
+      inactive-connection-timeout: 20
+      connection-wait-duration: 10
+
+logging:
+  level:
+    org:
+      springframework:
+        jdbc:
+          datasource: DEBUG
+        transaction: DEBUG
+        orm:
+          jpa:
+            JpaTransactionManager: DEBUG
