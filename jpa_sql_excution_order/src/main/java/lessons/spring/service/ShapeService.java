@@ -59,11 +59,14 @@ public class ShapeService {
 
     List<Property> resultProperties = new ArrayList<>();
 
-    // resultProperties = deleteAndAddProperties(dbShape, properties);
+    // The problematic way of updating properties
+    resultProperties = deleteAndAddProperties(dbShape, properties);
 
+    // First solution with flush
     // resultProperties = deleteFlushAndAddProperties(dbShape, properties);
 
-    resultProperties = mergeProperties(dbShape, properties);
+    // Second solution with merge
+    // resultProperties = mergeProperties(dbShape, properties);
 
     return ResponseEntity.ok(resultProperties);
   }
